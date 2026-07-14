@@ -4,5 +4,11 @@
     "name": "general",
     "description": "unsorted — anything that doesn't have a home yet",
     "createdAt": "2026-07-15"
+  },
+  {
+    "slug": "360-360",
+    "name": "360//360",
+    "description": "advanced",
+    "createdAt": "2026-07-14"
   }
 ]
