@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>the stacks</title>
+<meta name="description" content="a channel-organized personal blog, written and published from the browser." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<div class="shell">
+
+  <div class="top-bar">
+    <div class="brand">
+      <strong>the stacks</strong>
+      <span>channel-organized log</span>
+    </div>
+    <div class="top-actions">
+      <button class="btn" id="open-settings">settings</button>
+      <button class="btn btn-stamp" id="open-write">+ write</button>
+    </div>
+  </div>
+
+  <div class="layout">
+    <aside>
+      <p class="drawer-label">channels</p>
+      <div class="channels" id="channels-list"></div>
+      <button class="new-channel-btn" id="new-channel-btn">+ new channel</button>
+    </aside>
+
+    <main>
+      <div class="feed-header">
+        <div>
+          <h1 class="feed-title" id="feed-title">general</h1>
+          <p class="feed-desc" id="feed-desc"></p>
+        </div>
+      </div>
+      <div id="feed"></div>
+    </main>
+  </div>
+
+  <footer class="site-footer">
+    <p>static, no backend — posts publish straight to this GitHub repo, which GitHub Pages serves.</p>
+  </footer>
+</div>
+
+<!-- ---- write overlay --------------------------------------------------- -->
+<div class="overlay" id="write-overlay" hidden>
+  <div class="write-card">
+    <h2>new card</h2>
+    <input type="text" class="title-input" id="post-title" placeholder="title" />
+    <div class="field-row">
+      <div>
+        <label class="mono" for="post-channel">channel</label>
+        <select id="post-channel"></select>
+      </div>
+    </div>
+    <div class="toolbar">
+      <button type="button" data-cmd="bold" title="Bold"><b>B</b></button>
+      <button type="button" data-cmd="italic" title="Italic"><i>I</i></button>
+      <button type="button" data-cmd="formatBlock" data-value="H2" title="Heading">H2</button>
+      <button type="button" data-cmd="formatBlock" data-value="H3" title="Subheading">H3</button>
+      <button type="button" data-cmd="insertUnorderedList" title="Bullet list">• list</button>
+      <button type="button" data-cmd="insertOrderedList" title="Numbered list">1. list</button>
+      <button type="button" data-cmd="createLink" title="Link">link</button>
+      <button type="button" data-cmd="formatBlock" data-value="P" title="Paragraph">¶</button>
+    </div>
+    <div class="editor-body" id="editor-body" contenteditable="true" data-placeholder="start writing…"></div>
+    <p class="status-line" id="write-status"></p>
+    <div class="write-actions">
+      <button class="btn" id="cancel-write">cancel</button>
+      <button class="btn btn-stamp" id="publish-btn">publish</button>
+    </div>
+  </div>
+</div>
+
+<!-- ---- settings modal ---------------------------------------------------- -->
+<div class="overlay" id="settings-overlay" hidden>
+  <div class="settings-card">
+    <h2>connect this site to GitHub</h2>
+    <p class="settings-help">
+      Publishing works by committing files to the same GitHub repo this site is hosted from.
+      1) Create a <strong>fine-grained personal access token</strong> at
+      <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">github.com/settings/personal-access-tokens/new</a>
+      scoped to only this one repo, with <strong>Contents: Read and write</strong> permission — nothing else.
+      2) Paste the repo details below. The token is saved only in this browser's local storage — never committed to the repo, never sent anywhere but GitHub's API.
+    </p>
+    <div class="field-row">
+      <div>
+        <label class="mono" for="cfg-owner">github username</label>
+        <input type="text" id="cfg-owner" placeholder="e.g. turnr" />
+      </div>
+      <div>
+        <label class="mono" for="cfg-repo">repo name</label>
+        <input type="text" id="cfg-repo" placeholder="e.g. the-stacks" />
+      </div>
+    </div>
+    <div class="field-row">
+      <div>
+        <label class="mono" for="cfg-branch">branch</label>
+        <input type="text" id="cfg-branch" placeholder="main" />
+      </div>
+      <div>
+        <label class="mono" for="cfg-token">personal access token</label>
+        <input type="text" id="cfg-token" placeholder="github_pat_…" />
+      </div>
+    </div>
+    <p class="status-line" id="settings-status"></p>
+    <div class="settings-actions">
+      <button class="btn" id="cancel-settings">cancel</button>
+      <button class="btn btn-stamp" id="save-settings">save</button>
+    </div>
+  </div>
+</div>
+
+<script src="gh.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
