@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://YOUR-USERNAME.github.io/YOUR-REPO/sitemap.xml
+Sitemap: https://nayan-mis.github.io/the-stacks/sitemap.xml
