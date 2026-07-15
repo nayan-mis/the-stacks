@@ -10,5 +10,11 @@
     "name": "360//360",
     "description": "advanced",
     "createdAt": "2026-07-14"
+  },
+  {
+    "slug": "book-club",
+    "name": "BOOK CLUB ",
+    "description": "The first rule of book club is ' just fucking read' . Doesn't matter what , it's fine until u read enough and love to read ",
+    "createdAt": "2026-07-15"
   }
 ]
