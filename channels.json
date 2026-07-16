@@ -16,5 +16,11 @@
     "name": "BOOK CLUB ",
     "description": "The first rule of book club is ' just fucking read' . Doesn't matter what , it's fine until u read enough and love to read ",
     "createdAt": "2026-07-15"
+  },
+  {
+    "slug": "to-one-million",
+    "name": "To One million.",
+    "description": "The  ultimate goal  is to make my first $1 million or scale any business to do $1 million ",
+    "createdAt": "2026-07-16"
   }
 ]
