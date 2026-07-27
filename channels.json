@@ -28,5 +28,11 @@
     "name": "Dashboard.io ",
     "description": "",
     "createdAt": "2026-07-19"
+  },
+  {
+    "slug": "mish-systems",
+    "name": "Mish Systems ",
+    "description": "Building a cdn systems to charge AI  and have a solution to the problem of revenue models disrupted due to AI",
+    "createdAt": "2026-07-27"
   }
 ]
